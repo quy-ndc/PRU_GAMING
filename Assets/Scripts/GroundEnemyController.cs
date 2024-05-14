@@ -188,6 +188,7 @@ public class GroundEnemyController : MonoBehaviour
             isInvincible = true;
             Health -= damage;
             rb.velocity = new Vector2(knockBack.x, knockBack.y);
+            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
     }
 }

@@ -10,6 +10,7 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
     SpriteRenderer spriteRenderer;
     GameObject objToRemove;
     Color startColor;
+    Rigidbody2D rb;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,6 +19,8 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
         spriteRenderer = animator.GetComponent<SpriteRenderer>();
         startColor = spriteRenderer.color;
         objToRemove = animator.gameObject;
+        rb = animator.GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

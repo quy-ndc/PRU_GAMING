@@ -32,7 +32,14 @@ public class PlayerController : MonoBehaviour
             {
                 if (IsMoving && !touchingDirection.IsOnWall && !IsBlocking)
                 {
-                    return moveSpeed;
+                    if (!IsSlowed)
+                    {
+                        return moveSpeed;
+                    }
+                    else
+                    {
+                        return moveSpeed / 2;
+                    }
                 }
                 else
                 {
@@ -75,6 +82,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    [SerializeField]
     private bool _isBlocking;
     public bool IsBlocking
     {
@@ -94,6 +102,14 @@ public class PlayerController : MonoBehaviour
         get
         {
             return animator.GetBool("canMove");
+        }
+    }
+
+    public bool IsSlowed
+    {
+        get
+        {
+            return animator.GetBool("isSlowed");
         }
     }
 
@@ -281,7 +297,13 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("hit");
             isInvincible = true;
             Health -= damage;
-            rb.velocity = new Vector2(knockBack.x + rb.velocity.x, rb.velocity.y + knockBack.y);
+            rb.velocity = new Vector2(knockBack.x, rb.velocity.y + knockBack.y);
+            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
+    }
+
+    public void OnBlocked()
+    {
+        CharacterEvents.characterBlocked.Invoke(gameObject, "Blocked");
     }
 }
