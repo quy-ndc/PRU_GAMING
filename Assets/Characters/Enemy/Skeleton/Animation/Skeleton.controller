@@ -17,7 +17,7 @@ AnimatorStateMachine:
     m_Position: {x: 230, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5330895333436016064}
-    m_Position: {x: 480, y: 170, z: 0}
+    m_Position: {x: 490, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6861542614397115272}
     m_Position: {x: 710, y: 210, z: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8bcb9cdfeeec2418879ac72b0c5dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 1.5
+  fadeTime: 0.5
 --- !u!114 &1715714710920670423
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3512569553937108317}
-  m_Layer: 8
+  - component: {fileID: 7244404655702218664}
+  - component: {fileID: 6595617500556110838}
+  m_Layer: 10
   m_Name: SwordAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +33,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7235339522428642482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &7244404655702218664
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204309862946455149}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.5459328, y: 0.8680172}
+      - {x: 0.766613, y: 0.8504176}
+      - {x: 0.6195573, y: 0.43055275}
+      - {x: 0.47799164, y: -0.0050109625}
+      - {x: -0.07209396, y: -0.24766445}
+      - {x: 0.46131134, y: -0.46825552}
+      - {x: 1.4895592, y: -0.5086751}
+      - {x: 1.8581276, y: -0.39515734}
+      - {x: 2.2627983, y: -0.04498434}
+      - {x: 2.3079848, y: 0.30350327}
+      - {x: 2.0822744, y: 0.6081824}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6595617500556110838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204309862946455149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8879e0a43627454bb4f97c07d9d08db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  knockBack: {x: 0, y: 0}
+  enemy: {fileID: 0}
 --- !u!1 &2549026670972068857
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2
   attackZone: {fileID: 31990723978697676}
-  cliffDetectionZone: {fileID: 0}
+  cliffDetectionZone: {fileID: 1587013509252015082}
   _maxHealth: 100
   _health: 100
   _isAlive: 1

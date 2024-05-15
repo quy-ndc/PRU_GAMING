@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 
 public class UIManager : MonoBehaviour
@@ -13,9 +14,17 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        gameCanvas = FindObjectOfType<Canvas>();
-        CharacterEvents.characterDamaged += (CharacterTookDamange);
-        CharacterEvents.characterBlocked += (CharacterBlocked);
+        gameCanvas = FindAnyObjectByType<Canvas>();
+        //CharacterEvents.characterDamaged += (CharacterTookDamange);
+        //CharacterEvents.characterBlocked += (CharacterBlocked);
+    }
+
+    private void Start()
+    {
+        if (!gameCanvas)
+        {
+            gameCanvas = FindObjectOfType<Canvas>();
+        }
     }
 
     private void OnEnable()
@@ -28,14 +37,13 @@ public class UIManager : MonoBehaviour
     {
         CharacterEvents.characterDamaged -= (CharacterTookDamange);
         CharacterEvents.characterBlocked -= (CharacterBlocked);
-
     }
 
     public void CharacterTookDamange(GameObject character, float damange)
     {
         Vector3 spawnPossition = Camera.main.WorldToScreenPoint(character.transform.position);
 
-        TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPossition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
+        TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPossition, Quaternion.identity, gameCanvas?.transform).GetComponent<TMP_Text>();
 
         tmpText.text = damange.ToString();
     }
@@ -44,7 +52,7 @@ public class UIManager : MonoBehaviour
     {
         Vector3 spawnPossition = Camera.main.WorldToScreenPoint(character.transform.position);
 
-        TMP_Text tmpText = Instantiate(blockTextPrefab, spawnPossition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
+        TMP_Text tmpText = Instantiate(blockTextPrefab, spawnPossition, Quaternion.identity, gameCanvas?.transform).GetComponent<TMP_Text>();
 
         tmpText.text = text;
     }
