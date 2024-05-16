@@ -124,8 +124,6 @@ public class GroundEnemyController : MonoBehaviour
     private float timeSinceHit;
     public float invincibilityTime = 0.25f;
 
-
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -19,6 +19,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public GameState currentState;
+    public GameState previousState;
+
+    [Header("UI")]
+    [SerializeField]
+    private GameObject pauseScreen;
+    [SerializeField]
+    private GameObject questionScreen;
+
     public static GameManager Instance;
 
     private void Awake()
@@ -33,15 +42,6 @@ public class GameManager : MonoBehaviour
         }
         DisableScreen();
     }
-
-    public GameState currentState;
-    public GameState previousState;
-
-    [Header("UI")]
-    [SerializeField]
-    private GameObject pauseScreen;
-    [SerializeField]
-    private GameObject questionScreen;
 
     //private void Update()
     //{
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     //            break;
     //    }
     //}
-    
+
     public void ChangeState(GameState newState)
     {
         currentState = newState;
@@ -89,12 +89,23 @@ public class GameManager : MonoBehaviour
 
     public void MetWithQuestion()
     {
+        ChangeState(GameState.Question);
         questionScreen.SetActive(true);
-        Debug.Log(questionScreen.GetComponentInChildren<TextMeshProUGUI>());
+        Time.timeScale = 0f;
+        GameObject questionObject = GameObject.FindGameObjectWithTag("QuestionText");
+        GameObject[] answers = GameObject.FindGameObjectsWithTag("QuestionAnswer");
+        GameObject correctAnswer = GameObject.FindGameObjectWithTag("CorrectAnswer");
+        QuestionList questions = new QuestionList();
+        List<Question> questionList = questions.questions;
 
         if (questionScreen.GetComponentInChildren<TextMeshProUGUI>() != null)
         {
-            questionScreen.GetComponentInChildren<TextMeshProUGUI>().text = "hi";
+            questionObject.GetComponentInChildren<TextMeshProUGUI>().text = questionList[SceneManager.GetActiveScene().buildIndex].questionText;
+            for (int i = 0; i < answers.Length;  i++)
+            {
+                answers[i].GetComponentInChildren<TextMeshProUGUI>().text = questionList[SceneManager.GetActiveScene().buildIndex].answers[i];
+            }
+            correctAnswer.GetComponentInChildren<TextMeshProUGUI>().text = questionList[SceneManager.GetActiveScene().buildIndex].correctAnswer;
         }
     }
 
@@ -104,9 +115,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void NextLevel()
+    public void OnAnswerCorrect()
     {
+        previousState = currentState;
+        ChangeState(GameState.Gameplay);
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void OnAnswerIncorrect()
+    {
+        RestartGame();
     }
 
     public void OnPause(InputAction.CallbackContext context)

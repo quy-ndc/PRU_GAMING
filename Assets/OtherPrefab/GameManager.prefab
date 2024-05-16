@@ -48,6 +48,7 @@ MonoBehaviour:
   currentState: 0
   previousState: 0
   pauseScreen: {fileID: 0}
+  questionScreen: {fileID: 0}
 --- !u!114 &4095582556214094710
 MonoBehaviour:
   m_ObjectHideFlags: 0

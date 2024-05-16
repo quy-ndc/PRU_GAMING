@@ -18,7 +18,8 @@ public class NextLevel : MonoBehaviour
     {
         if (other != null && currentScene.buildIndex < maxScene)
         {
-            SceneManager.LoadScene(currentScene.buildIndex + 1, LoadSceneMode.Single);
+            //SceneManager.LoadScene(currentScene.buildIndex + 1, LoadSceneMode.Single);
+            GameManager.Instance.MetWithQuestion();
         }
         else
         {
