@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         Paused,
         GameOver,
         Question,
-
+        ChestOpened
     }
 
     public GameState currentState;
@@ -43,22 +43,6 @@ public class GameManager : MonoBehaviour
         DisableScreen();
     }
 
-    //private void Update()
-    //{
-    //    switch (currentState)
-    //    {
-    //        case GameState.Gameplay:
-    //            break;
-    //        case GameState.Paused:
-    //            break;
-    //        case GameState.GameOver:
-    //            break;
-    //        default:
-    //            Debug.LogWarning("No Such state exist");
-    //            break;
-    //    }
-    //}
-
     public void ChangeState(GameState newState)
     {
         currentState = newState;
@@ -68,9 +52,9 @@ public class GameManager : MonoBehaviour
     {
         if (currentState != GameState.Paused)
         {
+            Time.timeScale = 0f;
             previousState = currentState;
             ChangeState(GameState.Paused);
-            Time.timeScale = 0f;
             pauseScreen.SetActive(true);
             PlayerController.Instance.animator.SetBool("canMove", false);
         }
@@ -80,8 +64,8 @@ public class GameManager : MonoBehaviour
     {
         if (currentState == GameState.Paused)
         {
-            ChangeState(previousState);
             Time.timeScale = 1f;
+            ChangeState(previousState);
             pauseScreen.SetActive(false);
             PlayerController.Instance.animator.SetBool("canMove", true);
         }
@@ -89,9 +73,9 @@ public class GameManager : MonoBehaviour
 
     public void MetWithQuestion()
     {
+        Time.timeScale = 0f;
         ChangeState(GameState.Question);
         questionScreen.SetActive(true);
-        Time.timeScale = 0f;
         GameObject questionObject = GameObject.FindGameObjectWithTag("QuestionText");
         GameObject[] answers = GameObject.FindGameObjectsWithTag("QuestionAnswer");
         GameObject correctAnswer = GameObject.FindGameObjectWithTag("CorrectAnswer");
@@ -101,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (questionScreen.GetComponentInChildren<TextMeshProUGUI>() != null)
         {
             questionObject.GetComponentInChildren<TextMeshProUGUI>().text = questionList[SceneManager.GetActiveScene().buildIndex].questionText;
-            for (int i = 0; i < answers.Length;  i++)
+            for (int i = 0; i < answers.Length; i++)
             {
                 answers[i].GetComponentInChildren<TextMeshProUGUI>().text = questionList[SceneManager.GetActiveScene().buildIndex].answers[i];
             }
@@ -111,16 +95,21 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 1f; // Ensure time scale is reset to normal
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnAnswerCorrect()
     {
-        previousState = currentState;
+        previousState = GameState.Gameplay;
         ChangeState(GameState.Gameplay);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void OnChestOpened()
+    {
+        Debug.Log("ADD A DAMN EVENT PLS");
     }
 
     public void OnAnswerIncorrect()

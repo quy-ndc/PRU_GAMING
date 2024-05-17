@@ -11,5 +11,6 @@ public class CharacterEvents
 {
     public static UnityAction<GameObject, float> characterDamaged;
     public static UnityAction<GameObject, string> characterBlocked;
+    public static UnityAction<GameObject, Vector2, string> characterTalk;
 }
 

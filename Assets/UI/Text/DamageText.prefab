@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Damange
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a3628e6e14e581f44972972a4d5a4a4f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2119ffb0321e9724a91931d0371ab4ba, type: 2}
   m_sharedMaterial: {fileID: 3086573315730365728, guid: a3628e6e14e581f44972972a4d5a4a4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &8850096602025292977
