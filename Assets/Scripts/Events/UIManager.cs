@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public Canvas gameCanvas;
 
     public GameObject damageTextPrefab;
+    public GameObject parriedTextPrefab;
     public GameObject blockTextPrefab;
     public Transform chatBubblePrefab;
 
@@ -49,21 +50,23 @@ public class UIManager : MonoBehaviour
         tmpText.text = damange.ToString();
     }
 
-    public void CharacterBlocked(GameObject character, string text)
+    public void CharacterBlocked(GameObject character, float damage)
     {
         Vector3 spawnPossition = Camera.main.WorldToScreenPoint(character.transform.position);
-        Debug.Log("1 " + spawnPossition);
         TMP_Text tmpText = Instantiate(blockTextPrefab, spawnPossition, Quaternion.identity, gameCanvas?.transform).GetComponent<TMP_Text>();
 
-        tmpText.text = text;
+        tmpText.text = damage.ToString();
     }
 
     public void CharacterTalk(GameObject character, Vector2 offset, string text)
     {
-        Transform chatBubbleTransform = Instantiate(chatBubblePrefab, character.transform);
-        chatBubbleTransform.transform.position = new Vector2(character.transform.position.x + offset.x, character.transform.position.y + offset.y);
-        chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
-        Destroy(chatBubbleTransform.gameObject, 3);
+        if (!character.GetComponentInChildren<ChatBubble>())
+        {
+            Transform chatBubbleTransform = Instantiate(chatBubblePrefab, character.transform);
+            chatBubbleTransform.transform.position = new Vector2(character.transform.position.x + offset.x, character.transform.position.y + offset.y);
+            chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
+            Destroy(chatBubbleTransform.gameObject, 2f);
+        }
     }
 
 }

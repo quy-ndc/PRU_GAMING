@@ -10,7 +10,8 @@ using UnityEngine.Events;
 public class CharacterEvents
 {
     public static UnityAction<GameObject, float> characterDamaged;
-    public static UnityAction<GameObject, string> characterBlocked;
+    public static UnityAction<GameObject, string> characterParried;
+    public static UnityAction<GameObject, float> characterBlocked;
     public static UnityAction<GameObject, Vector2, string> characterTalk;
 }
 

@@ -30,6 +30,19 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    private string _quest;
+    public string Quest
+    {
+        get
+        {
+            return _quest;
+        }
+        set
+        {
+            _quest = value;
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -71,6 +84,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void MetWithQuestion()
     {
         Time.timeScale = 0f;
@@ -93,12 +112,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void OnAnswerCorrect()
     {
         previousState = GameState.Gameplay;
@@ -107,14 +120,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void OnChestOpened()
-    {
-        Debug.Log("ADD A DAMN EVENT PLS");
-    }
-
     public void OnAnswerIncorrect()
     {
         RestartGame();
+    }
+
+    public void OnChestOpened()
+    {
+        Debug.Log("ADD A DAMN EVENT PLS");
     }
 
     public void OnPause(InputAction.CallbackContext context)

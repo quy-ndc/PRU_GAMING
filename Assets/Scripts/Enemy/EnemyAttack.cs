@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
         if (collision != null && collision.GetComponent<PlayerController>() && PlayerController.Instance.IsBlocking)
         {
            // enemy.OnHit(0, knockBack);
-            PlayerController.Instance.OnBlocked();
+            PlayerController.Instance.OnBlocked(attackDamage, knockBack);
         }
 
     }

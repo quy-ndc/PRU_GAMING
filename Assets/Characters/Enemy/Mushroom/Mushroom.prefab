@@ -306,11 +306,15 @@ MonoBehaviour:
   walkSpeed: 4
   attackZone: {fileID: 3094246038057908484}
   cliffDetectionZone: {fileID: 3921839299794386977}
+  teleportZone: {fileID: 0}
   _maxHealth: 100
   _health: 100
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
+  hitProbability: 75
+  teleportCooldown: 0
+  teleportOffset: {x: 0, y: 0}
 --- !u!95 &5926171647887595518
 Animator:
   serializedVersion: 5
@@ -423,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedCollider: []
+  colliderAmount: 0
 --- !u!1 &8936761779894099455
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,3 +519,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedCollider: []
+  colliderAmount: 0

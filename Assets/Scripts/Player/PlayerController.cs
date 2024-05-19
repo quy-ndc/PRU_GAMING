@@ -302,8 +302,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnBlocked()
+    public void OnBlocked(float damage, Vector2 knockBack)
     {
-        CharacterEvents.characterBlocked.Invoke(gameObject, "Blocked");
+        isInvincible = true;
+        Health -= damage / 2;
+        CharacterEvents.characterBlocked.Invoke(gameObject, damage / 2);
     }
 }

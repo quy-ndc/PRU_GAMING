@@ -9,6 +9,7 @@ public class GroundEnemyController : MonoBehaviour
     public float walkSpeed = 4f;
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
+    public DetectionZone teleportZone;
 
     Rigidbody2D rb;
     TouchingDirection touchingDirection;
@@ -123,7 +124,14 @@ public class GroundEnemyController : MonoBehaviour
     private bool isInvincible = false;
     private float timeSinceHit;
     public float invincibilityTime = 0.25f;
+    public float hitProbability = 100f;
 
+    [Header("For teleporting enemies")]
+    [SerializeField]
+    private float teleportCooldown;
+    private bool canTeleport = true;
+    [SerializeField]
+    private Vector2 teleportOffset;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -133,7 +141,11 @@ public class GroundEnemyController : MonoBehaviour
 
     private void Update()
     {
-        HasTarget = attackZone.detectedCollider.Count > 0;
+        HasTarget = attackZone.detectedCollider.Count > 0 || teleportZone?.detectedCollider.Count > 0;
+        if (teleportZone?.detectedCollider.Count > 0 && canTeleport)
+        {
+            StartCoroutine(Teleport());
+        }
         if (isInvincible)
         {
             if (timeSinceHit > invincibilityTime)
@@ -182,11 +194,33 @@ public class GroundEnemyController : MonoBehaviour
     {
         if (!isInvincible)
         {
-            animator.SetTrigger("hit");
+            if (UnityEngine.Random.value < (hitProbability / 100f))
+            {
+                animator.SetTrigger("hit");
+            }
             isInvincible = true;
             Health -= damage;
             rb.velocity = new Vector2(knockBack.x, knockBack.y);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
     }
+
+    private IEnumerator Teleport()
+    {
+        canTeleport = false;
+        if (gameObject.transform.localScale.x > 0)
+        {
+            gameObject.transform.position = new Vector2(teleportZone.detectedCollider[0].transform.position.x + -teleportOffset.x, teleportZone.detectedCollider[0].transform.position.y + teleportOffset.y);
+            gameObject.transform.localScale = new Vector2(1, 1);
+        }
+        else
+        {
+            gameObject.transform.position = new Vector2(teleportZone.detectedCollider[0].transform.position.x + teleportOffset.x, teleportZone.detectedCollider[0].transform.position.y + teleportOffset.y);
+            gameObject.transform.localScale = new Vector2(-1, 1);
+        }
+        yield return new WaitForSeconds(teleportCooldown);
+        canTeleport = true;
+    }
+
+
 }
