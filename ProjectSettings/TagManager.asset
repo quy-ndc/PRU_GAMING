@@ -22,8 +22,8 @@ TagManager:
   - GroundDetection
   - PlayerIndicator
   - EnemyIndicator
-  - 
-  - 
+  - QuestGiver
+  - QuestIndecator
   - 
   - 
   - 

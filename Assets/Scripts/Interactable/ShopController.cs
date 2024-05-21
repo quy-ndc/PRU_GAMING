@@ -5,24 +5,31 @@ using UnityEngine.InputSystem;
 
 public class ShopController : MonoBehaviour
 {
-    public bool isInRange = false;
-    public int currentLine = 0;
-    public int questGivenLine;
-    public List<string> lines = new List<string>();
-    GameObject questIndicator;
-    public bool hasTalked = false;
+    private bool isInRange = false;
+    private GameObject questIndicator;
+    private bool hasGivenQuest = false;
 
-    public Animator animator;
+    [SerializeField]
+    private DetectionZone monsterZone;
+    [SerializeField]
+    private string questToGive;
+
+    [SerializeField]
+    private string preQuestLine;
+    [SerializeField]
+    private string postQuestLine;
+
+    private Quest assignedQuest;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        monsterZone = GetComponentInChildren<DetectionZone>();
         questIndicator = transform.Find("QuestIndicator").gameObject;
     }
 
     private void Update()
     {
-        questIndicator.SetActive(!hasTalked);
+        questIndicator.SetActive(!hasGivenQuest);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,21 +46,25 @@ public class ShopController : MonoBehaviour
     {
         if (context.started && isInRange)
         {
-            if (QuestManager.Instance.questState == QuestManager.QuestState.Finished)
+            if (!hasGivenQuest)
             {
-                CharacterEvents.characterTalk.Invoke(gameObject, new Vector2(0f, -0.5f), "Jump down the river to progress");
+                CharacterEvents.characterTalk(gameObject, new Vector2(0.5f, 0f), preQuestLine);
+                QuestManager.Instance.AddQuest(questToGive, monsterZone);
+                int questIndex = QuestManager.Instance.quests.Count - 1;
+                QuestManager.Instance.StartQuest(questIndex);
+                assignedQuest = QuestManager.Instance.quests[questIndex];
+                hasGivenQuest = true;
             }
             else
             {
-                CharacterEvents.characterTalk.Invoke(gameObject, new Vector2(0f, -0.5f), lines[currentLine]);
-                hasTalked = true;
-                if (currentLine == questGivenLine)
+                // Check the state of the assigned quest
+                if (assignedQuest.questState == QuestState.Finished)
                 {
-                    QuestManager.Instance.OnQuestReceived("Kill all the monsters in the cave");
+                    CharacterEvents.characterTalk(gameObject, new Vector2(0.5f, 0f), postQuestLine);
                 }
-                if (currentLine < lines.Count - 1)
+                else
                 {
-                    currentLine++;
+                    CharacterEvents.characterTalk(gameObject, new Vector2(0.5f, 0f), preQuestLine);
                 }
             }
         }

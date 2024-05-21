@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef07b6d13d5782458a43ab1ceaeba75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
+  walkSpeed: 4
   attackZone: {fileID: 31990723978697676}
   cliffDetectionZone: {fileID: 1587013509252015082}
   teleportZone: {fileID: 0}
@@ -278,10 +278,11 @@ MonoBehaviour:
   _health: 100
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 75
+  invincibilityTime: 0
   hitProbability: 100
   teleportCooldown: 0
   teleportOffset: {x: 0, y: 0}
+  teleportDelay: 0
 --- !u!114 &7925821417300571219
 MonoBehaviour:
   m_ObjectHideFlags: 0

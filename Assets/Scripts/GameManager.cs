@@ -30,19 +30,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
-    private string _quest;
-    public string Quest
-    {
-        get
-        {
-            return _quest;
-        }
-        set
-        {
-            _quest = value;
-        }
-    }
-
     private void Awake()
     {
         if (Instance == null)

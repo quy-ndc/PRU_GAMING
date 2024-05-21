@@ -295,10 +295,11 @@ MonoBehaviour:
   _health: 200
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
+  invincibilityTime: 0
   hitProbability: 50
-  teleportCooldown: 0
-  teleportOffset: {x: 2.5, y: 1}
+  teleportCooldown: 1
+  teleportOffset: {x: 2, y: 0}
+  teleportDelay: 0.1
 --- !u!1 &3728285066421664700
 GameObject:
   m_ObjectHideFlags: 0
