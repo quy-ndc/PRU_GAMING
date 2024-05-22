@@ -92,4 +92,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene:
     m_Handle: 0
-  maxScene: 5
+  maxScene: 7

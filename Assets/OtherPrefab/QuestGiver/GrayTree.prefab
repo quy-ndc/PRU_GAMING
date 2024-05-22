@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1283666351298513797}
   - component: {fileID: 9162122224235676815}
   - component: {fileID: 2808047379390271055}
+  - component: {fileID: 9040317313647511375}
   m_Layer: 12
   m_Name: GrayTree
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b8a83356af8a49ae7c72b61871604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
   monsterZone: {fileID: 7310095613652996731}
   questToGive: Kill the slime
   preQuestLine: This tree has no leaves
@@ -272,6 +274,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &9040317313647511375
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476613469779778358}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5361822879848440980
 GameObject:
   m_ObjectHideFlags: 0
