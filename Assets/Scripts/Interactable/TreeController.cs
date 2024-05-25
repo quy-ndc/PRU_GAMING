@@ -89,6 +89,7 @@ public class TreeController : MonoBehaviour
                     IsGrown = true;
                     CharacterEvents.characterTalk(gameObject, new Vector2(0.5f, 0f), postQuestLine);
                     rb.bodyType = RigidbodyType2D.Static;
+                    QuestManager.Instance.questDone += 1;
                 }
                 else
                 {

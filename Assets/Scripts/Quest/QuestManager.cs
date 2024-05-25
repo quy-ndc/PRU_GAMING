@@ -11,6 +11,8 @@ public class QuestManager : MonoBehaviour
     public GameObject questPrefab;
     public Transform questSpawnPoint;
     public float yOffset = 60f;
+    public int questToPass;
+    public int questDone = 0;
 
     public static QuestManager Instance;
 
@@ -48,7 +50,7 @@ public class QuestManager : MonoBehaviour
             }
         }
 
-        nextLevelIndicator.SetActive(allQuestsFinished && nextLevelIndicator);
+        nextLevelIndicator.SetActive(allQuestsFinished && nextLevelIndicator && questDone >= questToPass);
 
         for (int i = quests.Count - 1; i >= 0; i--)
         {

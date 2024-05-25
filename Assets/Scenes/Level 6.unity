@@ -1829,6 +1829,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5400625781328765883, guid: 5b4123fe940d36a46a2d6028c765c7b0, type: 3}
+      propertyPath: questToPass
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400625781328765883, guid: 5b4123fe940d36a46a2d6028c765c7b0, type: 3}
       propertyPath: nextLevelPortal
       value: 
       objectReference: {fileID: 1143336475}

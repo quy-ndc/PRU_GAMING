@@ -42,6 +42,10 @@ public class QuestionList
         questionText.Add("What is the national animal of Scotland?");
         questionText.Add("What is the rarest blood type?");
         questionText.Add("What is the chemical element with the highest melting point?");
+        questionText.Add("Which physicist developed the theory of general relativity?");
+        questionText.Add("What is the largest internal organ in the human body?");
+        questionText.Add("Who composed the opera \"The Magic Flute\"?");
+        questionText.Add("What is the heaviest naturally occurring element?");
 
         questionAnswer.Add(new string[] { "1", "3", "4" });
         questionAnswer.Add(new string[] { "Tokyo", "New York", "Ha Noi" });
@@ -49,6 +53,10 @@ public class QuestionList
         questionAnswer.Add(new string[] { "Dog", "Bird", "Elephant" });
         questionAnswer.Add(new string[] { "O+", "A-", "B+" });
         questionAnswer.Add(new string[] { "Copper", "Gold", "Uranium" });
+        questionAnswer.Add(new string[] { "Isaac Newton", "Niels Bohr", "Galileo Galilei" });
+        questionAnswer.Add(new string[] { "Heart", "Lung", "Kidney" });
+        questionAnswer.Add(new string[] { "Ludwig van Beethoven", "Johann Sebastian Bach", "Franz Schubert" });
+        questionAnswer.Add(new string[] { "Lead", "Thorium", "Plutonium" });
 
         correctAnswes.Add("2");
         correctAnswes.Add("Paris");
@@ -56,6 +64,10 @@ public class QuestionList
         correctAnswes.Add("Unicorn");
         correctAnswes.Add("AB-");
         correctAnswes.Add("Tunsten");
+        correctAnswes.Add("Albert Einstein");
+        correctAnswes.Add("liver");
+        correctAnswes.Add("Wolfgang Amadeus Mozart");
+        correctAnswes.Add("Uranium");
 
         for (int i = 0; i < questionText.Count; i++)
         {
