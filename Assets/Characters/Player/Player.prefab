@@ -345,11 +345,16 @@ MonoBehaviour:
   dashingPower: 15
   dashingTime: 0.2
   dashingCooldown: 0.25
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  moveInput: {x: 0, y: 0}
+  touchingDirection: {fileID: 0}
+  _isBlocking: 0
   _maxHealth: 100
   _health: 100
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
+  invincibilityTime: 0.5
 --- !u!114 &1756178874601048474
 MonoBehaviour:
   m_ObjectHideFlags: 0
