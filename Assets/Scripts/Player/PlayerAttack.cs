@@ -11,9 +11,14 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GroundEnemyController enemy = collision.GetComponent<GroundEnemyController>();
+        Boss_Health boss = collision.GetComponent<Boss_Health>();
         if (collision != null && enemy)
         {
             enemy.OnHit(attackDamage, knockBack);
+        }
+        else if (collision != null && boss) 
+        {
+            boss.TakeDamage(attackDamage);
         }
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SetBoolBehaviour : StateMachineBehaviour
 {
-    public string boolName;
-    public bool updateOnStateMachine, updateOnState;
+    public string boolName="canMove";
+    public bool updateOnStateMachine= true, updateOnState;
     public bool valueOnEnter, valueOnExit;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
