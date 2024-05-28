@@ -77,6 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +90,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -770,6 +772,7 @@ ScriptedImporter:
     cells:
     - name: vagabond-jump-attack_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 18
@@ -778,6 +781,7 @@ ScriptedImporter:
       spriteId: 16f9952a21b07b04c8620a97935e3a0c
     - name: vagabond-jump-attack_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 19
@@ -786,6 +790,7 @@ ScriptedImporter:
       spriteId: b801bb666cfc34b48835a23e49dd6df6
     - name: vagabond-jump-attack_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 21
@@ -794,6 +799,7 @@ ScriptedImporter:
       spriteId: 72c528a7ea6267d42bc315fd63305e99
     - name: vagabond-jump-attack_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 21
@@ -802,6 +808,7 @@ ScriptedImporter:
       spriteId: e099fc9d596eaae48a9d43a7cf3a0fdd
     - name: vagabond-jump-attack_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 21
@@ -810,6 +817,7 @@ ScriptedImporter:
       spriteId: 6584718e828d34846964d2aed898a9d7
     - name: vagabond-jump-attack_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 21
@@ -818,6 +826,7 @@ ScriptedImporter:
       spriteId: b7bac83126f807b438aadb574d24957d
     - name: vagabond-jump-attack_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 21
@@ -826,6 +835,7 @@ ScriptedImporter:
       spriteId: 1d032afc620d5aa4b90815b2dac24205
     - name: vagabond-jump-attack_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 21
@@ -834,6 +844,7 @@ ScriptedImporter:
       spriteId: 2f07d114237048b4ba3775cbf85df1fc
     - name: vagabond-jump-attack_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 21
@@ -842,6 +853,7 @@ ScriptedImporter:
       spriteId: fc1ee8121f014c742aa9f5c47855aa67
     - name: vagabond-jump-attack_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 21
@@ -850,6 +862,7 @@ ScriptedImporter:
       spriteId: 922ef838266929f45b889ff36f1fbfe1
     - name: vagabond-jump-attack_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 21
@@ -858,6 +871,7 @@ ScriptedImporter:
       spriteId: d9a1bd75e79bb1440b9535ac6f227878
     - name: vagabond-jump-attack_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 18
@@ -866,6 +880,7 @@ ScriptedImporter:
       spriteId: ceeeb8a57b4a338448a093c7140d5b57
     - name: vagabond-jump-attack_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 17
@@ -874,6 +889,7 @@ ScriptedImporter:
       spriteId: 0dd2fe0f186ebb94282856f48972f5a8
     - name: vagabond-jump-attack_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 17
@@ -882,6 +898,7 @@ ScriptedImporter:
       spriteId: cdc9df702419a9c4281c890af68df8e8
     - name: vagabond-jump-attack_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 17
@@ -890,6 +907,7 @@ ScriptedImporter:
       spriteId: 595277a3ea4b26b4e80de27ce7856375
     - name: vagabond-jump-attack_Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 17
@@ -947,6 +965,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 128, y: 64}

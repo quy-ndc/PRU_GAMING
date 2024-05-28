@@ -77,6 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +90,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -430,6 +432,7 @@ ScriptedImporter:
     cells:
     - name: summons1_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -438,6 +441,7 @@ ScriptedImporter:
       spriteId: a32e4099ee8218342892cdf964275621
     - name: summons1_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -446,6 +450,7 @@ ScriptedImporter:
       spriteId: 538b788db91ec1544b3512b9d6c301cd
     - name: summons1_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -454,6 +459,7 @@ ScriptedImporter:
       spriteId: dff5003642749e74f8e11c8b6464d9b0
     - name: summons1_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -462,6 +468,7 @@ ScriptedImporter:
       spriteId: 7b4874c159d2da84d9022e8ab35b3a0f
     - name: summons1_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -470,6 +477,7 @@ ScriptedImporter:
       spriteId: aa2379adf27e72244ab3c3efe87d1475
     - name: summons1_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -478,6 +486,7 @@ ScriptedImporter:
       spriteId: af1e8bb7061be3145bbb096a86369d1f
     - name: summons1_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -486,6 +495,7 @@ ScriptedImporter:
       spriteId: cdf01a7201ffbfe42a5c0f9a514a527b
     - name: summons1_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 12
@@ -494,6 +504,7 @@ ScriptedImporter:
       spriteId: aa5132da352d2fe439b43312fd09e1a5
     - name: summons1_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 12
@@ -502,6 +513,7 @@ ScriptedImporter:
       spriteId: f3c0d5d74a1511d40a0bb0ea3029c885
     - name: summons1_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 13
@@ -510,6 +522,7 @@ ScriptedImporter:
       spriteId: 8069c03bd597eae4a9d5d6ed2e692c51
     - name: summons1_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -518,6 +531,7 @@ ScriptedImporter:
       spriteId: 232467e8d36321443bbb6237cb25b424
     - name: summons1_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 14
@@ -526,6 +540,7 @@ ScriptedImporter:
       spriteId: 9d2e8170494554242a22f9d7c7b5558b
     - name: summons1_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 18
@@ -534,6 +549,7 @@ ScriptedImporter:
       spriteId: c9c7e86c7f37cc64a8ce888d4effe726
     - name: summons1_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 23
@@ -542,6 +558,7 @@ ScriptedImporter:
       spriteId: 920dd019dec7b074d99400e53563a579
     - name: summons1_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 25
@@ -599,6 +616,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 50, y: 50}

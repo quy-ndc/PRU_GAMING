@@ -77,6 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +90,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -310,6 +312,7 @@ ScriptedImporter:
     cells:
     - name: LayeredProject_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 17
@@ -318,6 +321,7 @@ ScriptedImporter:
       spriteId: fcb4755e96de16244a17bd1bd61be4d5
     - name: LayeredProject_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 19
@@ -326,6 +330,7 @@ ScriptedImporter:
       spriteId: 1396f37f70c490242af2cb51827c7a09
     - name: LayeredProject_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 19
@@ -334,6 +339,7 @@ ScriptedImporter:
       spriteId: 975e7435d0c284344827377bac59a71f
     - name: LayeredProject_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 22
@@ -342,6 +348,7 @@ ScriptedImporter:
       spriteId: 53bf24520ec1c954396e0fd5db467548
     - name: LayeredProject_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 17
@@ -350,6 +357,7 @@ ScriptedImporter:
       spriteId: 25f5a5ecffbad634ea514e7b35777409
     - name: LayeredProject_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 19
@@ -358,6 +366,7 @@ ScriptedImporter:
       spriteId: dedacea3486aa3842a75a219842b4c67
     - name: LayeredProject_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 17
@@ -366,6 +375,7 @@ ScriptedImporter:
       spriteId: 5865574555dd111468429b32df40aa59
     - name: LayeredProject_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 17
@@ -374,6 +384,7 @@ ScriptedImporter:
       spriteId: 95d4ef0ed567bfd438691df636fe3a98
     - name: LayeredProject_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 17
@@ -431,6 +442,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 100, y: 100}
