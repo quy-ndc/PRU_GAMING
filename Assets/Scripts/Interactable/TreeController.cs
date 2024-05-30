@@ -23,6 +23,8 @@ public class TreeController : MonoBehaviour
     private Quest assignedQuest;
 
     private Animator animator;
+    private Rigidbody2D rb;
+    private Collider2D col;
 
     public bool IsGrown
     {
@@ -40,6 +42,8 @@ public class TreeController : MonoBehaviour
     {
         monsterZone = GetComponentInChildren<DetectionZone>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();   
         questIndicator = transform.Find("QuestIndicator").gameObject;
     }
 
@@ -84,6 +88,8 @@ public class TreeController : MonoBehaviour
                 {
                     IsGrown = true;
                     CharacterEvents.characterTalk(gameObject, new Vector2(0.5f, 0f), postQuestLine);
+                    rb.bodyType = RigidbodyType2D.Static;
+                    QuestManager.Instance.questDone += 1;
                 }
                 else
                 {

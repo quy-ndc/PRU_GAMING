@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2009745355039708218}
   - component: {fileID: 2577359600223590797}
   - component: {fileID: 2196775824097007560}
+  - component: {fileID: 8869506542266003029}
   m_Layer: 8
   m_Name: NightBorne
   m_TagString: Untagged
@@ -300,6 +301,41 @@ MonoBehaviour:
   teleportCooldown: 1
   teleportOffset: {x: 2, y: 0}
   teleportDelay: 0.1
+--- !u!70 &8869506542266003029
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676750814995847606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.21305656, y: -0.24628067}
+  m_Size: {x: 2.3932, y: 2.4345856}
+  m_Direction: 0
 --- !u!1 &3728285066421664700
 GameObject:
   m_ObjectHideFlags: 0

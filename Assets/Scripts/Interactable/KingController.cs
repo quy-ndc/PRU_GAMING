@@ -67,6 +67,7 @@ public class KingController : MonoBehaviour
                 if (assignedQuest.questState == QuestState.Finished)
                 {
                     CharacterEvents.characterTalk(gameObject, new Vector2(0.5f, 0f), postQuestLine);
+                    QuestManager.Instance.questDone += 1;
                 }
                 else
                 {
