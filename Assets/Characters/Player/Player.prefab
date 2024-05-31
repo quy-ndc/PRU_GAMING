@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 4643573001589993557}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -500,6 +500,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 748c92e3-afe6-4d08-a78e-15f9b3683d37
     m_ActionName: Player/Dash[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1c850e21-8ab2-4d93-8f14-a41084abe687
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a43e959-ef20-4923-943f-b963af321f9e
+    m_ActionName: UI/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
