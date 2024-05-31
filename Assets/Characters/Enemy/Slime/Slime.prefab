@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8879e0a43627454bb4f97c07d9d08db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 20
   knockBack: {x: 0, y: 0}
   enemy: {fileID: 0}
 --- !u!1 &7568988906416113641
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef07b6d13d5782458a43ab1ceaeba75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4
+  walkSpeed: 5
   attackZone: {fileID: 8305236835162341233}
   cliffDetectionZone: {fileID: 2336644854334814955}
   teleportZone: {fileID: 0}
@@ -502,6 +502,7 @@ MonoBehaviour:
   hitProbability: 75
   teleportCooldown: 0
   teleportOffset: {x: 0, y: 0}
+  teleportDelay: 0
 --- !u!95 &6582488972836057415
 Animator:
   serializedVersion: 5

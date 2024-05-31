@@ -518,7 +518,8 @@ MonoBehaviour:
   _health: 30
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 50
+  invincibilityTime: 0
   hitProbability: 100
   teleportCooldown: 0
   teleportOffset: {x: 0, y: 0}
+  teleportDelay: 0

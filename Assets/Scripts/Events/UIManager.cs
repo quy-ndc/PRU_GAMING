@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
             Transform chatBubbleTransform = Instantiate(chatBubblePrefab, character.transform);
             chatBubbleTransform.transform.position = new Vector2(character.transform.position.x + offset.x, character.transform.position.y + offset.y);
             chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
-            Destroy(chatBubbleTransform.gameObject, 2f);
+            Destroy(chatBubbleTransform.gameObject, 1.5f);
         }
     }
 

@@ -256,8 +256,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.058826447}
-  m_Size: {x: 1.5, y: 2.367653}
+  m_Offset: {x: 0, y: -0.038022757}
+  m_Size: {x: 1.5, y: 2.3260455}
   m_Direction: 0
 --- !u!114 &3423892727765200187
 MonoBehaviour:
@@ -311,10 +311,11 @@ MonoBehaviour:
   _health: 100
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
+  invincibilityTime: 0
   hitProbability: 75
   teleportCooldown: 0
   teleportOffset: {x: 0, y: 0}
+  teleportDelay: 0
 --- !u!95 &5926171647887595518
 Animator:
   serializedVersion: 5

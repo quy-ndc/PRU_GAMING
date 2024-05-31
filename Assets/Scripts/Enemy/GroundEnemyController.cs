@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection))]
@@ -132,6 +133,16 @@ public class GroundEnemyController : MonoBehaviour
     private bool canTeleport = true;
     [SerializeField]
     private Vector2 teleportOffset;
+    [SerializeField]
+    private float teleportDelay;
+
+    //[Header("For dashing ememies")]
+    //public float dashingPower = 5;
+    //public float dashingTime = 1 / 2;
+    //public float dashingCooldown = 1 / 2;
+    //private bool canDash = true;
+    //private bool isDashing;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -141,11 +152,8 @@ public class GroundEnemyController : MonoBehaviour
 
     private void Update()
     {
-        HasTarget = attackZone.detectedCollider.Count > 0 || teleportZone?.detectedCollider.Count > 0;
-        if (teleportZone?.detectedCollider.Count > 0 && canTeleport)
-        {
-            StartCoroutine(Teleport());
-        }
+        HasTarget = attackZone.detectedCollider.Count > 0;
+
         if (isInvincible)
         {
             if (timeSinceHit > invincibilityTime)
@@ -171,6 +179,12 @@ public class GroundEnemyController : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+
+        if (teleportZone?.detectedCollider.Count > 0 && canTeleport)
+        {
+            StartCoroutine(Teleport());
         }
     }
 
@@ -208,19 +222,11 @@ public class GroundEnemyController : MonoBehaviour
     private IEnumerator Teleport()
     {
         canTeleport = false;
-        if (gameObject.transform.localScale.x > 0)
-        {
-            gameObject.transform.position = new Vector2(teleportZone.detectedCollider[0].transform.position.x + -teleportOffset.x, teleportZone.detectedCollider[0].transform.position.y + teleportOffset.y);
-            gameObject.transform.localScale = new Vector2(1, 1);
-        }
-        else
-        {
-            gameObject.transform.position = new Vector2(teleportZone.detectedCollider[0].transform.position.x + teleportOffset.x, teleportZone.detectedCollider[0].transform.position.y + teleportOffset.y);
-            gameObject.transform.localScale = new Vector2(-1, 1);
-        }
+        animator.SetTrigger("dash");
+        yield return new WaitForSeconds(teleportDelay);
+        //rb.velocity = ( new Vector2(gameObject.transform.localScale.x * dashingPower, 0.5f));
+        transform.position = new Vector2(transform.position.x + transform.localScale.x * teleportOffset.x, transform.position.y + teleportOffset.y);
         yield return new WaitForSeconds(teleportCooldown);
         canTeleport = true;
     }
-
-
 }
