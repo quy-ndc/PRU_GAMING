@@ -278,12 +278,11 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         isDashing = true;
         animator.SetTrigger("dash");
-        float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         float dashDirection = IsFacingRight ? 1f : -1f;
         rb.velocity = new Vector2(dashDirection * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime - 1/2);
-        rb.gravityScale = originalGravity;
+        rb.gravityScale = 3;
         yield return new WaitForSeconds(1/2);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);

@@ -49338,6 +49338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King
       objectReference: {fileID: 0}
+    - target: {fileID: 6662284354821499740, guid: 9a59c79d9fbadd3419c9467c123862d9, type: 3}
+      propertyPath: preQuestLine
+      value: Help the trees grow back their leaves
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
