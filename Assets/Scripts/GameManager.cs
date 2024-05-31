@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -7,6 +7,9 @@ using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState;
     public GameState previousState;
+
+
 
     [Header("UI")]
     [SerializeField]
@@ -43,6 +48,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public class SaveData
+    {
+        public string currentState;
+        public string previousState;
+        public string quest;
+        // Thêm các biến khác tại đây nếu bạn muốn lưu thêm thông tin
+    }
+
+    public void SaveGame()
+    {
+        SaveData data = new SaveData
+        {
+            currentState = currentState.ToString(),
+            previousState = previousState.ToString(),
+            quest = Quest
+        };
+
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        Debug.Log("Game Saved at: " + Application.persistentDataPath + "/savefile.json");
+    }
+
+    public void LoadGame()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            currentState = (GameState)Enum.Parse(typeof(GameState), data.currentState);
+            previousState = (GameState)Enum.Parse(typeof(GameState), data.previousState);
+            Quest = data.quest;
+            Debug.Log("Game Loaded");
+        }
+        else
+        {
+            Debug.LogError("No save file found at: " + path);
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -54,6 +99,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DisableScreen();
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+         #if UNITY_EDITOR
+         UnityEditor.EditorApplication.isPlaying = false;
+         #endif
     }
 
     public void ChangeState(GameState newState)
@@ -72,6 +124,7 @@ public class GameManager : MonoBehaviour
             PlayerController.Instance.animator.SetBool("canMove", false);
         }
     }
+  
 
     public void ResumeGame()
     {
@@ -96,8 +149,25 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.Question);
         questionScreen.SetActive(true);
         GameObject questionObject = GameObject.FindGameObjectWithTag("QuestionText");
+        if (questionObject == null)
+        {
+            Debug.LogError("QuestionText object not found.");
+            return;
+        }
+
         GameObject[] answers = GameObject.FindGameObjectsWithTag("QuestionAnswer");
+        if (answers.Length == 0)
+        {
+            Debug.LogError("QuestionAnswer objects not found.");
+            return;
+        }
+
         GameObject correctAnswer = GameObject.FindGameObjectWithTag("CorrectAnswer");
+        if (correctAnswer == null)
+        {
+            Debug.LogError("CorrectAnswer object not found.");
+            return;
+        }
         QuestionList questions = new QuestionList();
         List<Question> questionList = questions.questions;
 

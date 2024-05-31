@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             return _isFacingRight;
         }
-        private set
+         set
         {
             if (_isFacingRight != value)
             {
