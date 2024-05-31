@@ -1954,7 +1954,7 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -6038839255888520146}
-    m_Position: {x: 360, y: 180, z: 0}
+    m_Position: {x: 360, y: 150, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 4384731341548099201}
     m_Position: {x: 360, y: 0, z: 0}

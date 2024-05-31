@@ -1204,6 +1204,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f066c240a33244546ae5dfe69144ccfe, type: 3}
+--- !u!1001 &760657585
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 256.89487
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.53184
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624883943282780370, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409332936880658880, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
+      propertyPath: m_Name
+      value: 'Demon Slime '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1868645dda5d8634ebb58a62885058d2, type: 3}
 --- !u!1001 &808426977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28422,3 +28479,4 @@ SceneRoots:
   - {fileID: 329147860}
   - {fileID: 1064064594}
   - {fileID: 1779610856}
+  - {fileID: 760657585}
