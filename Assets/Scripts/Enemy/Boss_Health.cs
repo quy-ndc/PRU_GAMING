@@ -32,7 +32,7 @@ public class Boss_Health : MonoBehaviour
           {
               GetComponent<Animator>().SetBool("IsEnraged", true);
           }*/
-
+        
         if (health <= 0)
         {
             IsAlive = false;
