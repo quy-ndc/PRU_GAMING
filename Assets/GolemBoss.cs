@@ -67,7 +67,7 @@ public class MechaGolem : MonoBehaviour
                 if (timeBtwFire < 0)
                 {
                     MoveTowardsPlayer(0);
-                    animator.SetTrigger("dash");
+                    animator.SetTrigger("laserAttack");
                     StartCoroutine(FireLaser());
                 }
             }
