@@ -9,9 +9,9 @@ public class HeathBar : MonoBehaviour
     public Image FillBar;
     public TextMeshProUGUI valueText;
 
-    public void UpdateBar(int curValue, int maxValue)
+    public void UpdateBar(float curValue, float maxValue)
     {
-        FillBar.fillAmount = (float)curValue / (float)maxValue;
+        FillBar.fillAmount = curValue / maxValue;
         valueText.text = curValue.ToString() + " / " + maxValue.ToString();
     }
 }
