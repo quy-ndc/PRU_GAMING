@@ -24,7 +24,7 @@ public class Boss_walk : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss.MoveTowardsPlayer(speed,range);
+        boss.MoveTowardsPlayer(speed);
         boss.LookAtPlayer();
 
        // Vector2 target = new Vector2(player.position.x, rb.position.y);

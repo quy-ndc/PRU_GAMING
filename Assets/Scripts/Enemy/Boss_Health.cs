@@ -38,10 +38,10 @@ public class Boss_Health : MonoBehaviour
         if (health <= Maxhealth / 2)
         {
             Boss boss = GetComponent<Boss>();
-            boss.speed *= 1.05f;
+            boss.speed *= 1.06f;
             Boss_weapon weapon = GetComponent<Boss_weapon>();
-            weapon.attackRange *= 1.04f;
-            weapon.attackDamage *= 1.06f;
+            weapon.attackRange *= 1.05f;
+            weapon.attackDamage *= 1.07f;
             AnimatorOverrideController overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
             animator.runtimeAnimatorController = overrideController;
 
@@ -50,7 +50,7 @@ public class Boss_Health : MonoBehaviour
                 if (clip.name == "d_cleave")
                 {
                     AnimationClip newClip = Instantiate(clip);
-                    newClip.frameRate = clip.frameRate * 3f;
+                    newClip.frameRate = clip.frameRate * 4f;
                     overrideController[clip.name] = newClip;
                     break;
                 }

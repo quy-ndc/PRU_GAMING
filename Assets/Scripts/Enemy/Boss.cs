@@ -8,19 +8,17 @@ public class Boss : MonoBehaviour
     public float speed;
     private Rigidbody2D rb2d;
     public bool isFlipped = false;
-    public float range;
     public float attackRange = 3f;
-    public Boss boss;
     [SerializeField] 
-    public GameObject Canvas;
-    bool isAttacking = false; // Add this to your class variables
+    public GameObject healthBar;
+    private bool isAttacking = false;
+    private bool isChasing = false;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         Collider2D[] colliders = GetComponents<Collider2D>();
         rb2d = animator.GetComponent<Rigidbody2D>();
-        boss = animator.GetComponent<Boss>();
         foreach (Collider2D collider in colliders)
         {
             collider.enabled = true;
@@ -35,13 +33,11 @@ public class Boss : MonoBehaviour
             Debug.LogError("Player not found! Make sure the player GameObject has the tag 'Player'.");
         }
     }
-  public  void MoveTowardsPlayer(float moveSpeed, float maxRange)
+  public  void MoveTowardsPlayer(float moveSpeed)
     {
-        Vector2 direction = (player.position - transform.position).normalized;
-        float distance = Vector2.Distance(transform.position, player.position);
-        if (distance <= maxRange && !isAttacking)
+        if (isChasing && !isAttacking)
         {
-            Canvas.SetActive(true);
+            healthBar.SetActive(true);
             Vector2 newPos = Vector2.MoveTowards(rb2d.position, player.position, moveSpeed * Time.fixedDeltaTime);
             newPos.y = transform.position.y;
             transform.position = newPos;
@@ -87,7 +83,11 @@ public class Boss : MonoBehaviour
     void Update()
     {
         LookAtPlayer();
-        MoveTowardsPlayer(speed, range);
+        MoveTowardsPlayer(speed);
+    }
+    public void StartChasing() 
+    {
+        isChasing = true;
     }
 
 }
