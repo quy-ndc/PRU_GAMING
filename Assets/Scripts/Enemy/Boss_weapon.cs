@@ -8,7 +8,7 @@ public class Boss_weapon : MonoBehaviour
     //public int enragedAttackDamage = 40;
     public Vector2 knockback;
     public Vector3 attackOffset;
-    public float attackRange ;
+    public float attackRange;
     public LayerMask attackMask;
     PlayerController player;
     
@@ -28,15 +28,9 @@ public class Boss_weapon : MonoBehaviour
         }
         else return;
         Debug.Log("Attack event received");
-
+ 
     }
-
-
-
-
-
-
-
+ 
     /*  public void EnragedAttack()
       {
           Vector3 pos = transform.position;
@@ -49,7 +43,7 @@ public class Boss_weapon : MonoBehaviour
              colInfo.GetComponent<PlayerHealth>().TakeDamage(enragedAttackDamage);
           }
       }*/
-
+ 
     void OnDrawGizmosSelected()
         {
             Vector3 pos = transform.position;
