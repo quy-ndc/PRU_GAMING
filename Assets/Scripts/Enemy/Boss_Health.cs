@@ -18,22 +18,17 @@ public class Boss_Health : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        animator.enabled = true;
     }
     public void TakeDamage(float damage)
     {
-        if (isInvulnerable)
+        if (!isInvulnerable)
         {
-            Debug.Log("Boss is invulnerable, damage not applied.");
-            return;
+            animator.SetBool("TakeDamage", true);
+            health -= damage;
+            Canvas.GetComponentInChildren<TextMeshProUGUI>().text = health + "/" + Maxhealth;
+            healthBarFill.UpdateBar(health, Maxhealth);
+            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
-        animator.SetTrigger("TakeDamage");
-        health -= damage;
-        Canvas.GetComponentInChildren<TextMeshProUGUI>().text = health + "/" + Maxhealth;
-        healthBarFill.UpdateBar(health, Maxhealth);
-        Debug.Log($"Boss took {damage} damage, current health: {health}");
-        CharacterEvents.characterDamaged.Invoke(gameObject, damage);
-
 
         if (health <= Maxhealth / 2)
         {

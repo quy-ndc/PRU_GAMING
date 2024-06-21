@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
     private Rigidbody2D rb2d;
     public bool isFlipped = false;
     public float attackRange = 3f;
-    [SerializeField] 
+    [SerializeField]
     public GameObject healthBar;
     private bool isAttacking = false;
     private bool isChasing = false;
@@ -33,7 +33,7 @@ public class Boss : MonoBehaviour
             Debug.LogError("Player not found! Make sure the player GameObject has the tag 'Player'.");
         }
     }
-  public  void MoveTowardsPlayer(float moveSpeed)
+    public void MoveTowardsPlayer(float moveSpeed)
     {
         if (isChasing && !isAttacking)
         {
@@ -82,10 +82,13 @@ public class Boss : MonoBehaviour
     }
     void Update()
     {
-        LookAtPlayer();
-        MoveTowardsPlayer(speed);
+        if (!isAttacking)
+        {
+            LookAtPlayer();
+            MoveTowardsPlayer(speed);
+        } 
     }
-    public void StartChasing() 
+    public void StartChasing()
     {
         isChasing = true;
     }
