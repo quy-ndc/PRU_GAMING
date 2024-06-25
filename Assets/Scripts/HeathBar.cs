@@ -13,5 +13,8 @@ public class HeathBar : MonoBehaviour
     {
         FillBar.fillAmount = curValue / maxValue;
         valueText.text = curValue.ToString() + " / " + maxValue.ToString();
+        if(FillBar.fillAmount <= 0 ) {
+            Destroy(gameObject);
+        }
     }
 }

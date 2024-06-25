@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - QuestionText
-  - QuestionAnswer
-  - CorrectAnswer
+  - Enemy
+  - PlayerController
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX

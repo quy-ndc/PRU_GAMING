@@ -4,10 +4,31 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void OnCollisionEnter2D(Collision2D collision)
+    private PlayerController playerController;
+    public int minDamage;
+    public int maxDamage;
+    public Vector2 knockBack;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Destroy the bullet when it collides with any object
+        if (collision.CompareTag("Player"))
+        {
+            playerController = collision.GetComponent<PlayerController>();
+            DamagePlayer();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerController = null;
+        }
+    }
+
+    void DamagePlayer()
+    {
+        int damage = UnityEngine.Random.Range(minDamage, maxDamage);
+        playerController.OnHit(damage, knockBack);
         Destroy(gameObject);
     }
 }

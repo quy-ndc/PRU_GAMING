@@ -7,58 +7,83 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class MechaGolem : MonoBehaviour
 {
-    // Mecha Golem Boss
     private Animator animator;
     private Transform target;
-    public float meleeRange = 1f;
+    public float meleeRange = 4f;
     public float speed;
     public bool isFaceleft = true;
     private Rigidbody2D rb2d;
 
-    // Bullet
     public GameObject bullet;
     public Transform firePos;
     public float TimeBtwFire = 0.2f;
     public float bulletForce;
     private float timeBtwFire;
 
-    // Laser
     public GameObject laserPrefab;
     public Transform laserSpawnPoint;
     public float laserDuration = 2.0f;
     public float laserSpeed = 30.0f;
 
+    private bool isMoving = false;
+
+    PlayerController playerController;
+    MechaGolem_Heal mechaGolem_Heal;
+    public int minDamage;
+    public int maxDamage;
+    public Vector2 knockBack;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {/*
+        if (collision.CompareTag("Player"))
+        {
+            playerController = collision.GetComponent<PlayerController>();
+            InvokeRepeating("DamagePlayer", 0, 1f);
+        }*/
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        /*if (collision.CompareTag("Player"))
+        {
+            playerController = null;
+            CancelInvoke();
+        }*/
+    }
+
+    void DamagePlayer()
+    {
+        int damage = UnityEngine.Random.Range(minDamage, maxDamage);
+        playerController.OnHit(damage, knockBack);
+    }
+    public void OnHit(int damage)
+    {
+        mechaGolem_Heal.TakeDame(damage);
+        CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+    }
     void Start()
     {
         animator = GetComponent<Animator>();
         Collider2D[] colliders = GetComponents<Collider2D>();
         rb2d = GetComponent<Rigidbody2D>();
-        foreach (Collider2D collider in colliders)
-        {
-            collider.enabled = false;
-        }
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        if (target != null)
-        {
-            Debug.Log("Player found and target assigned.");
-        }
-        else
-        {
-            Debug.LogError("Player not found! Make sure the player GameObject has the tag 'Player'.");
-        }
     }
 
     void Update()
     {
         flip();
         var distance = Vector2.Distance(transform.position, target.position);
-        MoveTowardsPlayer(speed);
+
+        if (isMoving)
+        {
+            MoveTowardsPlayer(speed);
+        }
 
         if (distance <= meleeRange)
         {
+            isMoving = false;
             animator.SetTrigger("meleeAttack");
         }
-        else if (distance > 9.0f)
+        else
         {
             int chance = Random.Range(0, 2);
             if (chance == 0)
@@ -66,7 +91,7 @@ public class MechaGolem : MonoBehaviour
                 timeBtwFire -= Time.deltaTime;
                 if (timeBtwFire < 0)
                 {
-                    MoveTowardsPlayer(0);
+                    isMoving = false;
                     animator.SetTrigger("laserAttack");
                     StartCoroutine(FireLaser());
                 }
@@ -76,8 +101,10 @@ public class MechaGolem : MonoBehaviour
                 timeBtwFire -= Time.deltaTime;
                 if (timeBtwFire < 0)
                 {
+                    isMoving = false;
                     animator.SetTrigger("rangedAttack");
                     FireBullet();
+
                 }
             }
         }
@@ -117,6 +144,8 @@ public class MechaGolem : MonoBehaviour
         Rigidbody2D rb = bulletTmp.GetComponent<Rigidbody2D>();
         Vector2 direction = (target.position - firePos.position).normalized;
         rb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
+
+        StartCoroutine(ResumeMovementAfterDelay());
     }
 
     IEnumerator FireLaser()
@@ -130,7 +159,13 @@ public class MechaGolem : MonoBehaviour
         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
         rb.velocity = direction * laserSpeed;
         yield return new WaitForSeconds(laserDuration);
-
         Destroy(laser);
+        StartCoroutine(ResumeMovementAfterDelay());
+    }
+
+    IEnumerator ResumeMovementAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f); 
+        isMoving = true;
     }
 }
