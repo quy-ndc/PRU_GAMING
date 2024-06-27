@@ -23,7 +23,7 @@ public class Boss_Health : MonoBehaviour
     {
         if (!isInvulnerable)
         {
-            animator.SetBool("TakeDamage", true);
+            animator.SetTrigger("TakeDamage");
             health -= damage;
             Canvas.GetComponentInChildren<TextMeshProUGUI>().text = health + "/" + Maxhealth;
             healthBarFill.UpdateBar(health, Maxhealth);
@@ -32,8 +32,7 @@ public class Boss_Health : MonoBehaviour
 
         if (health <= Maxhealth / 2)
         {
-            Boss boss = GetComponent<Boss>();
-            boss.speed *= 1.06f;
+            Boss.Instance.speed *= 1.06f;
             Boss_weapon weapon = GetComponent<Boss_weapon>();
             weapon.attackRange *= 1.05f;
             weapon.attackDamage *= 1.07f;

@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class BossActive : MonoBehaviour
 {
-    public Boss bossController;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-               bossController.StartChasing();
+            Boss.Instance.IsActive = true; 
         }
     }
 }

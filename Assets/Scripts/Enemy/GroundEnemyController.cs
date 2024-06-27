@@ -136,13 +136,6 @@ public class GroundEnemyController : MonoBehaviour
     [SerializeField]
     private float teleportDelay;
 
-    //[Header("For dashing ememies")]
-    //public float dashingPower = 5;
-    //public float dashingTime = 1 / 2;
-    //public float dashingCooldown = 1 / 2;
-    //private bool canDash = true;
-    //private bool isDashing;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
