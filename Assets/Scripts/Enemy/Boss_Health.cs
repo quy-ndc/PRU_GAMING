@@ -8,8 +8,8 @@ using UnityEngine.UIElements;
 
 public class Boss_Health : MonoBehaviour
 {
-    public float Maxhealth = 500;
-    public float health = 500;
+    public int Maxhealth = 500;
+    public int health = 500;
     public bool isInvulnerable = false;
     [SerializeField]
     public GameObject Canvas;
@@ -19,7 +19,7 @@ public class Boss_Health : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (!isInvulnerable)
         {

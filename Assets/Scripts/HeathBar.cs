@@ -16,5 +16,6 @@ public class HeathBar : MonoBehaviour
         if(FillBar.fillAmount <= 0 ) {
             Destroy(gameObject);
         }
+        Debug.Log(curValue.ToString());
     }
 }
