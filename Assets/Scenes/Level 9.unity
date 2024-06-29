@@ -3080,7 +3080,7 @@ MonoBehaviour:
   isFaceleft: 1
   bullet: {fileID: 5895859542584365872, guid: 13a37ff87a906cf4796ed8887f5b7ea4, type: 3}
   firePos: {fileID: 511006283}
-  TimeBtwFire: 2
+  TimeBtwFire: 1.5
   bulletForce: 15
   laserPrefab: {fileID: 5221040405986641040, guid: c531a79ae9cb325439dd00619600787c, type: 3}
   laserSpawnPoint: {fileID: 29189090}
