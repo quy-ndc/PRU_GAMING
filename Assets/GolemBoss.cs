@@ -24,8 +24,10 @@ public class MechaGolem : MonoBehaviour
 	public float laserDuration = 2.0f;
 	public float laserSpeed = 30.0f;
 
-	public float health = 300;
-	public int minDamage;
+	public float health = 100;
+	public float maxHeal = 100;
+    public HeathBar healthBar;
+    public int minDamage;
 	public int maxDamage;
 	public Vector2 knockBack;
 
@@ -47,10 +49,15 @@ public class MechaGolem : MonoBehaviour
 		Collider2D[] colliders = GetComponents<Collider2D>();
 		rb2d = GetComponent<Rigidbody2D>();
 		target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		healthBar.UpdateBar(health, maxHeal);
 	}
 
 	void Update()
 	{
+		if(health < 0)
+		{
+
+		}
 		flip();
 		if (CanMove)
 		{
@@ -137,6 +144,22 @@ public class MechaGolem : MonoBehaviour
 	{
 		health -= damage;
 		CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+		if (health <= 0) { 
+			OnDeath();
+		}
+		healthBar.UpdateBar(health,maxHeal);
 	}
 
+    public void OnDeath()
+    {
+        animator.SetTrigger("die");
+        StartCoroutine(DestroyAfterAnimation(1.8f));
+    }
+    private IEnumerator DestroyAfterAnimation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+
+	
 }
