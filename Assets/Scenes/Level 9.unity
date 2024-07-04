@@ -3254,6 +3254,7 @@ GameObject:
   - component: {fileID: 2049818014}
   - component: {fileID: 2049818015}
   - component: {fileID: 2049818017}
+  - component: {fileID: 2049818018}
   m_Layer: 8
   m_Name: GolemBoss
   m_TagString: Enemy
@@ -3435,22 +3436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703c08601ef37fc4cbc40d963eb9b980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  isFaceleft: 1
-  bullet: {fileID: 5895859542584365872, guid: 13a37ff87a906cf4796ed8887f5b7ea4, type: 3}
-  firePos: {fileID: 511006283}
-  TimeBtwFire: 1.5
-  bulletForce: 15
-  laserPrefab: {fileID: 5221040405986641040, guid: c531a79ae9cb325439dd00619600787c, type: 3}
-  laserSpawnPoint: {fileID: 29189090}
-  laserDuration: 1
-  laserSpeed: 0.65
-  health: 200
-  maxHeal: 200
-  healthBar: {fileID: 185687417}
-  minDamage: 10
-  maxDamage: 20
-  knockBack: {x: 0, y: 0}
 --- !u!114 &2049818017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3483,6 +3468,34 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
+--- !u!114 &2049818018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049818009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bf76c86a588494db7ade811b13b99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  isFaceleft: 1
+  bullet: {fileID: 0}
+  firePos: {fileID: 0}
+  TimeBtwFire: 0.2
+  bulletForce: 0
+  laserPrefab: {fileID: 0}
+  laserSpawnPoint: {fileID: 0}
+  laserDuration: 2
+  laserSpeed: 30
+  health: 100
+  maxHeal: 100
+  healthBar: {fileID: 0}
+  minDamage: 0
+  maxDamage: 0
+  knockBack: {x: 0, y: 0}
 --- !u!1 &2074062079
 GameObject:
   m_ObjectHideFlags: 0
