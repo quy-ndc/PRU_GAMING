@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
         GroundEnemyController enemy = collision.GetComponent<GroundEnemyController>();
         Boss bossSlime = collision.GetComponent<Boss>();
         MechaGolem bossMecha = collision.GetComponent<MechaGolem>();
+        DeathSummon deathSummon = collision.GetComponent<DeathSummon>();
+        DeathEnemy deathEnemy = collision.GetComponent<DeathEnemy>();
         if (collision != null && enemy)
         {
             enemy.OnHit(attackDamage, knockBack);
@@ -24,6 +26,14 @@ public class PlayerAttack : MonoBehaviour
         if (collision != null && bossMecha)
         {
             bossMecha.OnHit(attackDamage, knockBack);
+        }
+        if (collision != null && deathSummon)
+        {
+            deathSummon.OnHit();
+        }
+        if (collision != null && deathEnemy)
+        {
+            deathEnemy.OnHit(attackDamage, knockBack);
         }
     }
 }

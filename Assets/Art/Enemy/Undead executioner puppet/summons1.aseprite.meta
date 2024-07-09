@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: summons1_Frame_0
     originalName: 
-    pivot: {x: 0.6, y: -0.59999996}
+    pivot: {x: 0.55762947, y: 0.21118483}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -141,7 +141,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: summons1_Frame_1
     originalName: 
-    pivot: {x: 0.6, y: -0.59999996}
+    pivot: {x: 0.5435063, y: 0.21915475}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -161,7 +161,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 32}
   - name: summons1_Frame_2
     originalName: 
-    pivot: {x: 0.6, y: -0.59999996}
+    pivot: {x: 0.5293833, y: 0.22621688}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -181,7 +181,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 60}
   - name: summons1_Frame_3
     originalName: 
-    pivot: {x: 0.6, y: -0.59999996}
+    pivot: {x: 0.50113696, y: 0.2191555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -201,7 +201,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 88}
   - name: summons1_Frame_4
     originalName: 
-    pivot: {x: 0.6, y: -0.59999996}
+    pivot: {x: 0.5435074, y: 0.2288638}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -221,7 +221,7 @@ ScriptedImporter:
     uvTransform: {x: 22, y: 4}
   - name: summons1_Frame_5
     originalName: 
-    pivot: {x: 0.6, y: -0.79999995}
+    pivot: {x: 0.5293833, y: 0.29220632}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -241,7 +241,7 @@ ScriptedImporter:
     uvTransform: {x: 22, y: 60}
   - name: summons1_Frame_6
     originalName: 
-    pivot: {x: 0.6, y: -0.79999995}
+    pivot: {x: 0.5152601, y: 0.28279164}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -261,7 +261,7 @@ ScriptedImporter:
     uvTransform: {x: 22, y: 83}
   - name: summons1_Frame_7
     originalName: 
-    pivot: {x: 0.62499994, y: -1.5}
+    pivot: {x: 0.50142133, y: 0.50592613}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -281,7 +281,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 116}
   - name: summons1_Frame_8
     originalName: 
-    pivot: {x: 0.62499994, y: -1.5}
+    pivot: {x: 0.48376608, y: 0.47727203}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -301,7 +301,7 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 26}
   - name: summons1_Frame_9
     originalName: 
-    pivot: {x: 0.66666675, y: -2.1666665}
+    pivot: {x: 0.52543384, y: 0.5167732}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -321,7 +321,7 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 74}
   - name: summons1_Frame_10
     originalName: 
-    pivot: {x: 0.6, y: -0.59999996}
+    pivot: {x: 0.5293833, y: 0.23327789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -341,7 +341,7 @@ ScriptedImporter:
     uvTransform: {x: 22, y: 32}
   - name: summons1_Frame_11
     originalName: 
-    pivot: {x: 0.75, y: -0.77777773}
+    pivot: {x: 0.5381501, y: 0.2306171}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -361,7 +361,7 @@ ScriptedImporter:
     uvTransform: {x: 22, y: 106}
   - name: summons1_Frame_12
     originalName: 
-    pivot: {x: 0.50000006, y: -1.2857143}
+    pivot: {x: 0.50000006, y: 0.19}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -381,7 +381,7 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 4}
   - name: summons1_Frame_13
     originalName: 
-    pivot: {x: 0.5, y: -2.5555556}
+    pivot: {x: 0.47646204, y: 0.47312036}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -401,7 +401,7 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 42}
   - name: summons1_Frame_14
     originalName: 
-    pivot: {x: 0.66666675, y: -3.5714285}
+    pivot: {x: 0.52543384, y: 0.4234641}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

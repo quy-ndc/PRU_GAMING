@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 2505586198858003863}
   - component: {fileID: 2406315866517223888}
   - component: {fileID: 496995688371372660}
+  - component: {fileID: 6562574463995561023}
   m_Layer: 0
   m_Name: BossActiveSwitch
   m_TagString: Untagged
@@ -305,9 +306,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGivenQuest: 0
   monsterZone: {fileID: 4232977780517655318}
-  questToGive: Kill death
+  questToGive: Kill death and their summons
   wall1: {fileID: 6913647263906221739}
   wall2: {fileID: 4052269942505939776}
+--- !u!114 &6562574463995561023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950473233130274771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9736eebba0bb8e24592e2c7fcdd5120e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5306140327554724464
 PrefabInstance:
   m_ObjectHideFlags: 0
