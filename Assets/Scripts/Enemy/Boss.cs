@@ -9,10 +9,9 @@ public class Boss : MonoBehaviour
 	private Rigidbody2D rb2d;
 	public bool isFlipped = false;
 	[SerializeField]
-	public GameObject healthBar;
+	public HeathBar healthBar;
 	[SerializeField]
 	public DetectionZone attackZone;
-	public float health = 500;
 	[SerializeField]
 	private bool isInvincible = false;
 	private float timeSinceHit;
@@ -33,7 +32,54 @@ public class Boss : MonoBehaviour
 		}
 	}
 
-	private bool _hasTarget = false;
+    [SerializeField]
+    private float _maxHealth;
+    public float MaxHealth
+    {
+        get
+        {
+            return _maxHealth;
+        }
+        set
+        {
+            _maxHealth = value;
+        }
+    }
+
+    [SerializeField]
+    private float _health;
+    public float Health
+    {
+        get
+        {
+            return _health;
+        }
+        set
+        {
+            _health = value;
+            if (_health <= 0)
+            {
+                IsAlive = false;
+            }
+        }
+    }
+
+    [SerializeField]
+    private bool _isAlive = true;
+    public bool IsAlive
+    {
+        get
+        {
+            return _isAlive;
+        }
+        set
+        {
+            _isAlive = value;
+            animator.SetBool("isAlive", value);
+        }
+    }
+
+    private bool _hasTarget = false;
 	public bool HasTarget
 	{
 		get
@@ -71,7 +117,8 @@ public class Boss : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-	}
+        healthBar.UpdateBar(Health, MaxHealth);
+    }
 
 	private void Start()
 	{
@@ -97,7 +144,6 @@ public class Boss : MonoBehaviour
 	{
 		if (IsActive && CanMove)
 		{
-			healthBar.SetActive(true);
 			Vector2 newPos = Vector2.MoveTowards(rb2d.position, player.position, moveSpeed * Time.fixedDeltaTime);
 			newPos.y = transform.position.y;
 			transform.position = newPos;
@@ -152,7 +198,8 @@ public class Boss : MonoBehaviour
 				animator.SetTrigger("hit");
 			}
 			isInvincible = true;
-			health -= damage;
+			Health -= damage;
+			healthBar.UpdateBar(Health, MaxHealth);
 			CharacterEvents.characterDamaged.Invoke(gameObject, damage);
 		}
 	}
@@ -160,6 +207,6 @@ public class Boss : MonoBehaviour
 	public void StartChasing()
 	{
 		IsActive = true;
-	}
+    }
 
 }
