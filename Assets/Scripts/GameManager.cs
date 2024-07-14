@@ -137,6 +137,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ToMainMenu()
+    {
+		ResumeGame();
+		SceneManager.LoadScene(0);
+    }
+
+    public void OnGameWin()
+    {
+        ResumeGame();
+        SceneManager.LoadScene(10);
+    }
+
     public void RestartGame()
     {
         Time.timeScale = 1f;

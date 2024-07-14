@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class MechaGolem : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class MechaGolem : MonoBehaviour
 	public float speed;
 	public bool isFaceleft = true;
 	private Rigidbody2D rb2d;
+	private Collider2D col;
 
 	public GameObject bullet;
 	public Transform firePos;
@@ -49,6 +49,7 @@ public class MechaGolem : MonoBehaviour
 		Collider2D[] colliders = GetComponents<Collider2D>();
 		rb2d = GetComponent<Rigidbody2D>();
 		target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		col = GetComponent<Collider2D>();	
 		healthBar.UpdateBar(health, maxHeal);
 	}
 
@@ -152,14 +153,14 @@ public class MechaGolem : MonoBehaviour
 
     public void OnDeath()
     {
+		col.enabled = false;
         animator.SetTrigger("die");
-        StartCoroutine(DestroyAfterAnimation(1.8f));
-    }
-    private IEnumerator DestroyAfterAnimation(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
+		StartCoroutine(WinGame());
     }
 
-	
+	public IEnumerator WinGame()
+	{
+		yield return new WaitForSeconds(2);
+		GameManager.Instance.OnGameWin();
+	}
 }

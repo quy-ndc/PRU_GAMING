@@ -53,9 +53,9 @@ public class QuestionList
         questionAnswer.Add(new string[] { "Dog", "Bird", "Elephant" });
         questionAnswer.Add(new string[] { "O+", "A-", "B+" });
         questionAnswer.Add(new string[] { "Copper", "Gold", "Uranium" });
-        questionAnswer.Add(new string[] { "Isaac Newton", "Niels Bohr", "Galileo Galilei" });
+        questionAnswer.Add(new string[] { "Newton", "Niels Bohr", "Galilei" });
         questionAnswer.Add(new string[] { "Heart", "Lung", "Kidney" });
-        questionAnswer.Add(new string[] { "Ludwig van Beethoven", "Johann Sebastian Bach", "Franz Schubert" });
+        questionAnswer.Add(new string[] { "Beethoven", "Johann Bach", "Schubert" });
         questionAnswer.Add(new string[] { "Lead", "Thorium", "Plutonium" });
 
         correctAnswes.Add("2");
@@ -64,9 +64,9 @@ public class QuestionList
         correctAnswes.Add("Unicorn");
         correctAnswes.Add("AB-");
         correctAnswes.Add("Tunsten");
-        correctAnswes.Add("Albert Einstein");
+        correctAnswes.Add("Einstein");
         correctAnswes.Add("liver");
-        correctAnswes.Add("Wolfgang Amadeus Mozart");
+        correctAnswes.Add("Mozart");
         correctAnswes.Add("Uranium");
 
         for (int i = 0; i < questionText.Count; i++)

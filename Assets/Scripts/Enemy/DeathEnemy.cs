@@ -6,7 +6,9 @@ public class DeathEnemy : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
+	private Collider2D col;
     private GameObject player;
+	public HeathBar healthBar;
 	[SerializeField]
     public GameObject summonPrefab;
 	[SerializeField]
@@ -16,6 +18,7 @@ public class DeathEnemy : MonoBehaviour
 	public float summonTimer;
 	public DetectionZone attackZone;
 	public bool isFaceleft = true;
+
 
 	private bool _hasTarget = false;
 	public bool HasTarget
@@ -71,6 +74,7 @@ public class DeathEnemy : MonoBehaviour
 			if (_health <= 0)
 			{
 				IsAlive = false;
+				col.enabled = false;
 			}
 		}
 	}
@@ -114,6 +118,8 @@ public class DeathEnemy : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		animator = GetComponent<Animator>();
+		col = GetComponent<Collider2D>();
+		healthBar.UpdateBar(Health, MaxHealth);
 	}
 
     void Update()
@@ -140,7 +146,7 @@ public class DeathEnemy : MonoBehaviour
 	private void FixedUpdate()
 	{
 		summonTimer -= Time.deltaTime;
-		if (summonTimer <= 0 && CanMove)
+		if (summonTimer <= 0 && CanMove && IsActive)
 		{
 			StartCoroutine(Summon());
 			summonTimer = initialSummonTimer;
@@ -198,6 +204,7 @@ public class DeathEnemy : MonoBehaviour
 			}
 			isInvincible = true;
 			Health -= damage;
+			healthBar.UpdateBar(Health, MaxHealth);
 			rb.velocity = new Vector2(knockBack.x, knockBack.y);
 			CharacterEvents.characterDamaged.Invoke(gameObject, damage);
 		}

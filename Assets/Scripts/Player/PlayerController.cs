@@ -20,8 +20,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Vector2 moveInput;
     public TouchingDirection touchingDirection;
+	public HeathBar healthBar;
 
-    private bool _isMoving = false;
+	private bool _isMoving = false;
     private bool _isFacingRight = true;
 
     public float CurrentMoveSpeed
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour
             if (_health <= 0)
             {
                 IsAlive = false;
+                GameManager.Instance.RestartGame();
             }
         }
     }
@@ -182,7 +184,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirection = GetComponent<TouchingDirection>();
-    }
+        healthBar.gameObject.SetActive(true);
+		healthBar.UpdateBar(Health, MaxHealth);
+	}
 
     private void Update()
     {
@@ -296,7 +300,8 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("hit");
             isInvincible = true;
             Health -= damage;
-            rb.velocity = new Vector2(knockBack.x, rb.velocity.y + knockBack.y);
+			healthBar.UpdateBar(Health, MaxHealth);
+			rb.velocity = new Vector2(knockBack.x, rb.velocity.y + knockBack.y);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
     }
@@ -305,6 +310,7 @@ public class PlayerController : MonoBehaviour
     {
         isInvincible = true;
         Health -= damage / 2;
-        CharacterEvents.characterBlocked.Invoke(gameObject, damage / 2);
+		healthBar.UpdateBar(Health, MaxHealth);
+		CharacterEvents.characterBlocked.Invoke(gameObject, damage / 2);
     }
 }

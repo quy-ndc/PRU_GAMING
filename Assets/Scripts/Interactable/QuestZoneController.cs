@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class QuestZoneController : MonoBehaviour
 {
     [SerializeField]
-    private bool hasGivenQuest = false;
+    public bool hasGivenQuest = false;
 
     [SerializeField]
     private DetectionZone monsterZone;

@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour
 	private Transform player;
 	public float speed;
 	private Rigidbody2D rb2d;
+	private Collider2D col;
 	public bool isFlipped = false;
 	[SerializeField]
 	public HeathBar healthBar;
@@ -60,6 +61,7 @@ public class Boss : MonoBehaviour
             if (_health <= 0)
             {
                 IsAlive = false;
+				col.enabled = false;
             }
         }
     }
@@ -126,18 +128,10 @@ public class Boss : MonoBehaviour
 		animator = GetComponent<Animator>();
 		Collider2D[] colliders = GetComponents<Collider2D>();
 		rb2d = animator.GetComponent<Rigidbody2D>();
+		col = GetComponent<Collider2D>();
 		foreach (Collider2D collider in colliders)
 		{
 			collider.enabled = true;
-		}
-
-		if (player != null)
-		{
-			Debug.Log("Player found and target assigned.");
-		}
-		else
-		{
-			Debug.LogError("Player not found! Make sure the player GameObject has the tag 'Player'.");
 		}
 	}
 	public void MoveTowardsPlayer(float moveSpeed)

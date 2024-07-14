@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8bcb9cdfeeec2418879ac72b0c5dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 0.5
+  fadeTime: 2
 --- !u!1102 &-6500953289843816434
 AnimatorState:
   serializedVersion: 6
@@ -134,7 +134,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-6257981677944450043
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

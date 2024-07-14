@@ -294,6 +294,23 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &398397738447462083
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478cedc525066aa438042e5cd39652ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolName: canMove
+  updateOnStateMachine: 0
+  updateOnState: 1
+  valueOnEnter: 0
+  valueOnExit: 0
 --- !u!114 &809289872751125082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cadb600f9c9b1408ab8a60cd834dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 3
+  fadeTime: 2
 --- !u!1101 &2111266279072172555
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -347,6 +364,9 @@ MonoBehaviour:
   speed: 2.5
   attackRange: 3
   range: 17.4
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!1102 &4278518047246784709
 AnimatorState:
   serializedVersion: 6
@@ -360,6 +380,7 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: 809289872751125082}
+  - {fileID: 398397738447462083}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

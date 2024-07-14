@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 955308065}
     - target: {fileID: 1338065588627889798, guid: 3def240103cd971428d3729d42e78d32, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
+      value: ToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1448733315784584411, guid: 3def240103cd971428d3729d42e78d32, type: 3}
       propertyPath: m_Pivot.x
@@ -663,6 +663,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 372540574}
   m_SourcePrefab: {fileID: 100100000, guid: 3def240103cd971428d3729d42e78d32, type: 3}
+--- !u!114 &372540572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 805523484498855457, guid: 3def240103cd971428d3729d42e78d32, type: 3}
+  m_PrefabInstance: {fileID: 372540571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6abb5928a25a5a44bd04b7cf5a3d4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &372540573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508880314493085718, guid: 3def240103cd971428d3729d42e78d32, type: 3}
@@ -13880,6 +13891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7317346092208841798, guid: 48379349be9cb2f4abcd91135f63d64d, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 372540572}
     - target: {fileID: 3265459131339330819, guid: 48379349be9cb2f4abcd91135f63d64d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.94

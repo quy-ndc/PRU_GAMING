@@ -106,9 +106,6 @@ GameObject:
   - component: {fileID: 5717295341365900639}
   - component: {fileID: 2887633814932083895}
   - component: {fileID: 3749154954101309827}
-  - component: {fileID: 2362835163961084370}
-  - component: {fileID: 1970760455417122816}
-  - component: {fileID: 7350699564015483602}
   m_Layer: 8
   m_Name: 'Demon Slime '
   m_TagString: Untagged
@@ -279,72 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88ef82ea862085409571371bab040bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  speed: 0
   isFlipped: 0
---- !u!114 &2362835163961084370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5409332936880658880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33032baf2d4eab14b9afa8cd99f9aecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  deathEffect: {fileID: 0}
-  isInvulnerable: 0
+  healthBar: {fileID: 0}
+  attackZone: {fileID: 0}
+  isInvincible: 0
+  invincibilityTime: 0.25
+  hitProbability: 100
+  _maxHealth: 0
+  _health: 0
   _isAlive: 1
---- !u!114 &1970760455417122816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5409332936880658880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144d23dba7f2c514ba4659cb6a0b2559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 20
-  knockback: {x: 1, y: 1}
-  attackOffset: {x: -2, y: 1, z: 0}
-  attackRange: 1.4
-  attackMask:
-    serializedVersion: 2
-    m_Bits: 128
---- !u!114 &7350699564015483602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5409332936880658880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ad66ed66abe194e993a3abc4f376a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.05
-  wallDistance: 0.2
-  ceilingDistance: 0.05
-  _isGrounded: 1
-  _isOnWall: 0
-  _isOnCeiling: 0
